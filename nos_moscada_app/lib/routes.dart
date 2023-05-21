@@ -1,3 +1,4 @@
+import './screens/root_screen.dart';
 import './screens/home_screen.dart';
 import './screens/about_screen.dart';
 import './screens/intro_screen.dart';
@@ -7,10 +8,11 @@ import './screens/user_screen.dart';
 
 
 var appRoutes = {
-  '/': (context) => const HomeScreen(),
-  '/about': (context) => const AboutScreen(),
+  '/': (context) => RootScreen(),
+  '/home': (context) => const HomeScreen(),
+  '/home/about': (context) => const AboutScreen(),
   '/intro': (context) => const IntroScreen(),
   '/landing': (context) => const LandingScreen(),
   '/login': (context) => const LoginScreen(),
-  '/user': (context) => const UserScreen(),
+  '/home/user': (context) => const UserScreen(),
 };
