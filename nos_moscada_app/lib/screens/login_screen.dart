@@ -1,9 +1,9 @@
-// TODO: develop a landing page for new users
+// TODO: develop a login screen.
 
 import 'package:flutter/material.dart';
 
-class LandingScreen extends StatelessWidget {
-  const LandingScreen({super.key});
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

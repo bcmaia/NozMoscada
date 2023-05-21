@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:firebase_core/firebase_core.dart';
 
+import 'package:nos_moscada_app/style/app_theme.dart';
 
-void main() async {
+
+Future<void> main() async {
 
   // Enshuring some stuff is initialized
   // Necessary to connect to firebase
@@ -36,10 +38,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: appTheme,
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
