@@ -40,6 +40,8 @@ dependencies:
   google_fonts: ^4.0.4
   intl: ^0.18.1
   firebase_auth: ^4.6.1
+  google_sign_in: ^6.1.0
+  font_awesome_flutter: ^10.4.0
 
 dev_dependencies:
   flutter_test:

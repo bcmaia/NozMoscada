@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class Auth {
   // Getting an instance of FirebaseAuth
@@ -35,5 +36,34 @@ class Auth {
   //   );
   // }
 
+  Future<void> googleLogin() async {
+    try {
+      final googleUser = await GoogleSignIn().signIn();
+      if (null == googleUser) throw Exception('Could not resolve google id.');
+
+      final googleAuth = await googleUser.authentication;
+      final authCredential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
+
+      await _firebaseAuth.signInWithCredential(authCredential);
+
+      // ignore: unused_catch_clause
+    } on FirebaseAuthException catch (e) {
+      // handle error
+      rethrow;
+    }
+  }
+
+  Future<void> anonLogin() async {
+    try {
+      await FirebaseAuth.instance.signInAnonymously();
+      // ignore: unused_catch_clause
+    } on FirebaseAuthException catch (e) {
+      // handle error
+      // TODO: handle error
+    }
+  }
 
 }
