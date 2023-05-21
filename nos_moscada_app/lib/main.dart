@@ -1,6 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+
+void main() async {
+
+  // Enshuring some stuff is initialized
+  // Necessary to connect to firebase
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Initialize Firebase if running on the web platform
+  if (kIsWeb) { // web
+    await Firebase.initializeApp(
+      options: const FirebaseOptions(
+          apiKey: 'AIzaSyD44r9m38Vga6EkmXGa2Z8ZY00t7JjzgFw',
+          appId: '1:693206006678:web:ab41c02862473f34747bb7',
+          messagingSenderId: '693206006678',
+          projectId: 'nozmoscada-222bd',
+        ),
+    );
+  } else { // other platforms
+    // TODO: add a switch for each platform.
+    await Firebase.initializeApp();
+  }
+
+  // Entry point to build the whole app
   runApp(const MyApp());
 }
 
@@ -13,21 +37,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a blue toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
