@@ -38,16 +38,38 @@ class Auth {
 
   Future<void> googleLogin() async {
     try {
-      final googleUser = await GoogleSignIn().signIn();
+      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
       if (null == googleUser) throw Exception('Could not resolve google id.');
 
-      final googleAuth = await googleUser.authentication;
+      final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
       final authCredential = GoogleAuthProvider.credential(
         accessToken: googleAuth.accessToken,
         idToken: googleAuth.idToken,
       );
 
-      await _firebaseAuth.signInWithCredential(authCredential);
+      final UserCredential userCredential = await _firebaseAuth.signInWithCredential(authCredential);
+      final User? user = userCredential.user;
+
+      if (null == user) throw Exception('Could not resolve google user.');
+
+      // if (user != null) {
+      //   // checking if uid or email is null
+      //   // assert(user.uid != null);
+      //   assert(user.email != null);
+
+      //   // var uid = user.uid;
+      //   // var userEmail = user.email;
+
+      //   assert(!user.isAnonymous);
+      //   // assert(await user.getIdToken() != null);
+
+      //   // final User currentUser = Auth().currentUser;
+      //   // assert(user.uid == currentUser.uid);
+
+      //   // SharedPreferences prefs = await SharedPreferences.getInstance();
+      //   // prefs.setBool('auth', true);
+      // }
+       
 
       // ignore: unused_catch_clause
     } on FirebaseAuthException catch (e) {

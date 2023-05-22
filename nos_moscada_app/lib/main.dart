@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:firebase_core/firebase_core.dart';
-import 'package:nos_moscada_app/screens/login_screen.dart';
 import 'package:nos_moscada_app/screens/root_screen.dart';
-import 'package:nos_moscada_app/services/auth.dart';
 
 import 'package:nos_moscada_app/style/app_theme.dart';
 
@@ -43,33 +41,10 @@ class MyApp extends StatelessWidget {
       title: 'Noz Moscada',
       // debugShowCheckedModeBanner: false,
       theme: appTheme,
-      home: const WidgetTree(title: 'Flutter Demo Home Page'),
+      home: const RootScreen(),
     );
   }
 }
 
 
-class WidgetTree extends StatefulWidget {
-  const WidgetTree({super.key, required this.title});
 
-  final String title;
-
-  @override
-  State<WidgetTree> createState() => _WidgetTreeState();
-}
-
-
-class _WidgetTreeState extends State<WidgetTree> {
-  @override
-  Widget build(BuildContext context) {
-    return StreamBuilder(
-      stream: Auth().authStateChanges,
-      builder: (context, snapshot) {
-        //if (snapshot.hasError) {} // TODO: Error Handling
-        if (snapshot.hasData) {return RootScreen();}
-
-        return const LoginScreen();
-      },
-    );
-  }
-}

@@ -1,47 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-
+import 'package:nos_moscada_app/screens/home_screen.dart';
 import 'package:nos_moscada_app/services/auth.dart';
 
-class RootScreen extends StatelessWidget {
-  RootScreen({super.key});
+import 'login_screen.dart';
 
-  final User? user = Auth().currentUser;
 
-  Widget _title() {
-    return const Text('Root Screen (Debug)');
-  }
-
-  Widget _userUid() {
-    return Text(user?.email ?? 'User Email');
-  }
-
-  Widget _signOutButton() {
-    return ElevatedButton(
-      onPressed: Auth().signOut,
-      child: const Text('Sign Out'),
-    );
-  }
+class RootScreen extends StatefulWidget {
+  const RootScreen({super.key});
 
   @override
+  State<RootScreen> createState() => _RootScreenState();
+}
+
+
+class _RootScreenState extends State<RootScreen> {
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: _title(),
-      ),
-      body: Container(
-        height: double.infinity,
-        width: double.infinity,
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            _userUid(),
-            _signOutButton(),
-          ],
-        ),
-      ),
+    return StreamBuilder(
+      stream: Auth().authStateChanges,
+      builder: (context, snapshot) {
+        //if (snapshot.hasError) {} // TODO: Error Handling
+        if (snapshot.hasData) {return HomeScreen();}
+
+        return const LoginScreen();
+      },
     );
   }
 }

@@ -8,8 +8,8 @@ import './screens/user_screen.dart';
 
 
 var appRoutes = {
-  '/': (context) => RootScreen(),
-  '/home': (context) => const HomeScreen(),
+  '/': (context) => const RootScreen(),
+  '/home': (context) => HomeScreen(),
   '/home/about': (context) => const AboutScreen(),
   '/intro': (context) => const IntroScreen(),
   '/landing': (context) => const LandingScreen(),
