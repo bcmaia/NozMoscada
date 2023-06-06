@@ -12,11 +12,11 @@ receber informes do usúarios sobre árvores que pareçam estar em estado críti
   
   1. Três tipos de usuários: Administrador, Confiável, Comum:<br>
 
-    . Admistradores tem os mesmos direitos de (Confiável e Comum) além de poder escalar um usuário comum para confiável.
+    . Admistradores tem os mesmos direitos de (Confiável e Comum). Além de poderem escalar um usuário comum para confiável.
 
-    . Confiável tem os mesmos diretoes de (Comum) além de aceitar ou recusar um informe.
+    . Confiável tem os mesmos diretos de (Comum). Além de aceitar ou recusar um informe.
    
-    . Podem criar informes sobre árvores que acreditam esta em estado crítico
+    . Podem criar informes sobre árvores que acreditam estar em estado crítico.
   
   2. Árvores:
   
