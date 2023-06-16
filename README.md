@@ -8,7 +8,7 @@ O projeto tem como objetivo criar um aplicativo que possa de maneira fácil cata
 receber informes do usúarios sobre árvores que pareçam estar em estado crítico (risco de queda de galhos ou da árvore em si).
 
 ## Requisitos
-  Esses requisitos podem ser visto de maneira simples no <a href="https://www.figma.com/file/atdB7MxcoXUE3kd6tyEfGQ/Untitled?type=design&node-id=0-1&t=ulWkTOnLy74vJeKD-0">Mockup Figma</a>.
+  Esses requisitos podem ser vistos de maneira simples no <a href="https://www.figma.com/file/atdB7MxcoXUE3kd6tyEfGQ/Untitled?type=design&node-id=0-1&t=ulWkTOnLy74vJeKD-0">Mockup Figma</a>.
   
   1. Três tipos de usuários: Administrador, Confiável, Comum:<br>
 
