@@ -1,4 +1,4 @@
-# Projeto Parque árboreo
+# Projeto Parque Arbóreo
 
 Todos os arquivos do projetos podem ser encontrados em <a href="https://drive.google.com/drive/folders/134vnkkF_5TraWdF6ZyBkL2aTBzUvJ0B6">Google Drive</a>. (Devido a dados sensíveis o drive está privado)<br>
 
