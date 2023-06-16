@@ -52,6 +52,10 @@ receber informes do usúarios sobre árvores que pareçam estar em estado críti
   Para facilitar a utilização do aplicativo um botão seria criado na posição de cada árvore, porém, manualmente seria inviável (+2600 árvores), de forma que, esforços serão gastos com a tentativa da automatização.
   
   #### automatização
-  Para automatizar o mapa o arq 
+  O protótipo da automatização pode ser encontrado no seguinte <a href="https://colab.research.google.com/drive/1ba_5tJW49E_7XTO_V34KiW4XL28xo76r">link</a>.
+  
+  Para automatizar o mapa o arquivo será .CAD será utilizado para extrair a posição de cada árvore que será plotada no mapa futuramente como um botão.
+  
+   
  
    
