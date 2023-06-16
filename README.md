@@ -43,11 +43,6 @@ receber informes do usúarios sobre árvores que pareçam estar em estado críti
    Devido ao aplicativo funcionar em torno de relátorios um mapa responsivo é de suma importância, assim, sua implementação será feita utilizando a Google Maps API (inicialmente PNG) que pode futuramente facilitar a implementação de GPS.
    
  ## Comentários
- 
- ### Aplicativo
- 
- ### Dados
- 
  ### Mapa
   Para facilitar a utilização do aplicativo um botão seria criado na posição de cada árvore, porém, manualmente seria inviável (+2600 árvores), de forma que, esforços serão gastos com a tentativa da automatização.
   
