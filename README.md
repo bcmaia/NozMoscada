@@ -33,25 +33,25 @@ receber informes do usúarios sobre árvores que pareçam estar em estado críti
     . localização atual do usuário e a direção ao qual está virado, assim, facilitando encontrar a árvore.
     
 ## Abordagens
-  Nessa seção iremos falar sobre os métodos que foram utilizados para cumprir os requisitos.
+  Nessa seção falaremos sobre os métodos que foram utilizados para cumprir os requisitos.
   
   ### Aplicativo
    Devido ao foco portátil do aplicativo a implementação principal focará na plataforma android, assim, com Flutter como framework.
   ### Dados
-   Devido á alta necessidade de memória do aplicativo (mapa, fotos, descrições, dados de usuários) um banco de dados será necessário, levando em conta o escopo do prototípo (aplicativo reduzido) foi optado o uso do FireBase já que é eficiente em base de dados pequenas.  
+   Devido à alta necessidade de memória do aplicativo (mapa, fotos, descrições, dados de usuários) um banco de dados será necessário. Levando em conta o escopo do protótipo (aplicativo reduzido) foi escolhido o FireBase, por ser eficiente em bases de dados pequenas.  
   ### Mapa
-   Devido ao aplicativo funcionar em torno de relátorios um mapa responsivo é de suma importância, assim, sua implementação será feita utilizando a Google Maps API (inicialmente PNG) que pode futuramente facilitar a implementação de GPS.
+   Devido ao fato de o aplicativo funcionar em torno de relátorios, um mapa responsivo é de suma importância, assim, sua implementação será feita utilizando a Google Maps API (inicialmente PNG) que pode futuramente facilitar a implementação de GPS.
    
  ## Comentários
- ### Mapa
-  Para facilitar a utilização do aplicativo um botão seria criado na posição de cada árvore, porém, manualmente seria inviável (+2600 árvores), de forma que, esforços serão gastos com a tentativa da automatização.
+   ### Mapa
+    Para facilitar a utilização do aplicativo um botão seria criado na posição de cada árvore, porém, mapear estes botões manualmente seria inviável, dado que há mais de 2600 árvores. Portanto, esforços serão gastos com a tentativa da automatização.
   
-  #### automatização
-  Para automatizar o mapa o arquivo será .CAD será utilizado para extrair a posição de cada árvore que será plotada no mapa futuramente como um botão.
+      #### Automatização
+        Para automatizar o mapa o arquivo .CAD será utilizado para extrair a posição de cada árvore que será plotada no mapa futuramente como um botão.
   
-  O protótipo da automatização pode ser encontrado no seguinte <a href="https://colab.research.google.com/drive/1ba_5tJW49E_7XTO_V34KiW4XL28xo76r">link</a>.
+  O protótipo da automatização pode ser encontrado no <a href="https://colab.research.google.com/drive/1ba_5tJW49E_7XTO_V34KiW4XL28xo76r">link</a>.
   
-  a extração das posições se encontram no <a href="https://drive.google.com/drive/folders/134vnkkF_5TraWdF6ZyBkL2aTBzUvJ0B6">Google Drive</a>.
+  O documento com a extração das posições se encontra no <a href="https://drive.google.com/drive/folders/134vnkkF_5TraWdF6ZyBkL2aTBzUvJ0B6">Google Drive</a>.
   
    
  
