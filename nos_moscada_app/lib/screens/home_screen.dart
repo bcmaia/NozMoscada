@@ -19,7 +19,9 @@ class HomeScreen extends StatelessWidget {
           },
           child: Image.network(
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB4_zazLmJiReCYFvS-RrOk560-oE4rQI2HA&usqp=CAU",
-            fit: BoxFit.cover,
+            fit: BoxFit.fitWidth,
+            width: 110,
+            height: 300,
           ),
         ));
   }
