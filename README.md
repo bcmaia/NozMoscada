@@ -28,7 +28,7 @@ receber informes de usúarios sobre árvores que pareçam estar em estado críti
  3. Mapa:
   Para facilitar a criação de informes e a visualização da cobertura atual do aplicativo um mapa de cada área (inicialmente campus 1) será utilizado.
 
-     - Botões em nas localizações relativas a cada árvore que levam para a aba de descrição da árvore escolhida.
+     - Botões nas localizações relativas a cada árvore que levam para a aba de descrição da árvore escolhida.
     
      - Localização atual do usuário e a direção ao qual está virado, assim, facilitando encontrar a árvore.
     
