@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <!--
+	<head>
+		<!--
     If you are serving your web app in a path other than the root, change the
     href value below to reflect the base path you are serving from.
 
@@ -14,73 +14,75 @@
     This is a placeholder for base href that will be replaced by the value of
     the `--base-href` argument provided to `flutter build`.
   -->
-  <base href="$FLUTTER_BASE_HREF">
+		<base href="$FLUTTER_BASE_HREF" />
 
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+		<meta charset="UTF-8" />
+		<meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+		<meta name="description" content="A new Flutter project." />
 
-  <!-- iOS meta tags & icons -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="nos_moscada_app">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+		<!-- iOS meta tags & icons -->
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="apple-mobile-web-app-title" content="nos_moscada_app" />
+		<link rel="apple-touch-icon" href="icons/Icon-192.png" />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" href="favicon.png" />
 
-  <title>nos_moscada_app</title>
-  <link rel="manifest" href="manifest.json">
+		<title>nos_moscada_app</title>
+		<link rel="manifest" href="manifest.json" />
 
+		<meta
+			name="google-signin-client_id"
+			content="693206006678-lriqm2jb0akmqj9u1ubfnkdsk2u7cpi9.apps.googleusercontent.com"
+		/>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRYplpfk6p5GFShyo2nTmNJSctdAKtPiE&callback=initMap"></script>
+		<script type="module">
+			// Import the functions you need from the SDKs you need
+			import { initializeApp } from "firebase/app";
+			import { getAnalytics } from "firebase/analytics";
+			// TODO: Add SDKs for Firebase products that you want to use
+			// https://firebase.google.com/docs/web/setup#available-libraries
 
-  <meta name="google-signin-client_id" content="693206006678-lriqm2jb0akmqj9u1ubfnkdsk2u7cpi9.apps.googleusercontent.com">
+			// Your web app's Firebase configuration
+			// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+			const firebaseConfig = {
+				apiKey: "AIzaSyD44r9m38Vga6EkmXGa2Z8ZY00t7JjzgFw",
+				authDomain: "nozmoscada-222bd.firebaseapp.com",
+				projectId: "nozmoscada-222bd",
+				storageBucket: "nozmoscada-222bd.appspot.com",
+				messagingSenderId: "693206006678",
+				appId: "1:693206006678:web:ab41c02862473f34747bb7",
+				measurementId: "G-09HRMQXP7F",
+			};
 
-  <script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "firebase/app";
-    import { getAnalytics } from "firebase/analytics";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
+			// Initialize Firebase
+			const app = initializeApp(firebaseConfig);
+			const analytics = getAnalytics(app);
+		</script>
 
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-      apiKey: "AIzaSyD44r9m38Vga6EkmXGa2Z8ZY00t7JjzgFw",
-      authDomain: "nozmoscada-222bd.firebaseapp.com",
-      projectId: "nozmoscada-222bd",
-      storageBucket: "nozmoscada-222bd.appspot.com",
-      messagingSenderId: "693206006678",
-      appId: "1:693206006678:web:ab41c02862473f34747bb7",
-      measurementId: "G-09HRMQXP7F"
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-  </script>
-
-  <script>
-    // The value below is injected by flutter build, do not touch.
-    var serviceWorkerVersion = null;
-  </script>
-  <!-- This script adds the flutter initialization JS code -->
-  <script src="flutter.js" defer></script>
-</head>
-<body>
-  <script>
-    window.addEventListener('load', function(ev) {
-      // Download main.dart.js
-      _flutter.loader.loadEntrypoint({
-        serviceWorker: {
-          serviceWorkerVersion: serviceWorkerVersion,
-        },
-        onEntrypointLoaded: function(engineInitializer) {
-          engineInitializer.initializeEngine().then(function(appRunner) {
-            appRunner.runApp();
-          });
-        }
-      });
-    });
-  </script>
-</body>
+		<script>
+			// The value below is injected by flutter build, do not touch.
+			var serviceWorkerVersion = null;
+		</script>
+		<!-- This script adds the flutter initialization JS code -->
+		<script src="flutter.js" defer></script>
+	</head>
+	<body>
+		<script>
+			window.addEventListener("load", function (ev) {
+				// Download main.dart.js
+				_flutter.loader.loadEntrypoint({
+					serviceWorker: {
+						serviceWorkerVersion: serviceWorkerVersion,
+					},
+					onEntrypointLoaded: function (engineInitializer) {
+						engineInitializer.initializeEngine().then(function (appRunner) {
+							appRunner.runApp();
+						});
+					},
+				});
+			});
+		</script>
+	</body>
 </html>
