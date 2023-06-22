@@ -16,13 +16,6 @@ class HomeScreen extends StatelessWidget {
     return Text(user?.email ?? 'User Email');
   }
 
-  Widget _signOutButton() {
-    return ElevatedButton(
-      onPressed: Auth().signOut,
-      child: const Text('Sign Out'),
-    );
-  }
-
   Widget _mapButton(context) {
     return ElevatedButton(
       onPressed: () {
@@ -32,11 +25,57 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
+  Widget _userButton(context) {
+    return IconButton(
+        onPressed: () {
+          Navigator.pushNamed(context, '/home/user');
+        },
+        icon: const Icon(Icons.account_circle));
+  }
+
+  Widget _aboutButton(context) {
+    return IconButton(
+      icon: const Icon(Icons.info),
+      onPressed: () {
+        Navigator.pushNamed(context, '/home/about');
+      },
+    );
+  }
+
+  Widget _statsButton(context) {
+    return IconButton(
+      icon: const Icon(Icons.query_stats),
+      onPressed: () {
+        Navigator.pushNamed(context, 'stats');
+      },
+    );
+  }
+
+  Widget _reportButton(context) {
+    return IconButton(
+      icon: const Icon(Icons.attach_file),
+      onPressed: () {
+        Navigator.pushNamed(context, '/stats');
+      },
+    );
+  }
+
+  Widget _btnRow(context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        _aboutButton(context),
+        _statsButton(context),
+        _reportButton(context)
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: _title(),
+        title: _userButton(context),
       ),
       body: Container(
         height: double.infinity,
@@ -44,8 +83,7 @@ class HomeScreen extends StatelessWidget {
         padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[_userUid(), _signOutButton(), _mapButton(context)],
+          children: [_mapButton(context), _btnRow(context)],
         ),
       ),
     );
