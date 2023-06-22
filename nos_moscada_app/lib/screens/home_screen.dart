@@ -6,27 +6,27 @@ import 'package:nos_moscada_app/services/auth.dart';
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
 
+  static double iconsize = 50;
+
   final User? user = Auth().currentUser;
 
-  Widget _title() {
-    return const Text('Root Screen (Debug)');
-  }
-
-  Widget _userUid() {
-    return Text(user?.email ?? 'User Email');
-  }
-
   Widget _mapButton(context) {
-    return ElevatedButton(
-      onPressed: () {
-        Navigator.pushNamed(context, '/map');
-      },
-      child: const Text('go to map'),
-    );
+    return MouseRegion(
+        cursor: SystemMouseCursors.click,
+        child: GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(context, '/map');
+          },
+          child: Image.network(
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB4_zazLmJiReCYFvS-RrOk560-oE4rQI2HA&usqp=CAU",
+            fit: BoxFit.cover,
+          ),
+        ));
   }
 
   Widget _userButton(context) {
     return IconButton(
+        iconSize: iconsize,
         onPressed: () {
           Navigator.pushNamed(context, '/home/user');
         },
@@ -35,6 +35,7 @@ class HomeScreen extends StatelessWidget {
 
   Widget _aboutButton(context) {
     return IconButton(
+      iconSize: iconsize,
       icon: const Icon(Icons.info),
       onPressed: () {
         Navigator.pushNamed(context, '/home/about');
@@ -44,6 +45,7 @@ class HomeScreen extends StatelessWidget {
 
   Widget _statsButton(context) {
     return IconButton(
+      iconSize: iconsize,
       icon: const Icon(Icons.query_stats),
       onPressed: () {
         Navigator.pushNamed(context, 'stats');
@@ -53,6 +55,7 @@ class HomeScreen extends StatelessWidget {
 
   Widget _reportButton(context) {
     return IconButton(
+      iconSize: iconsize,
       icon: const Icon(Icons.attach_file),
       onPressed: () {
         Navigator.pushNamed(context, '/stats');
@@ -64,9 +67,13 @@ class HomeScreen extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        const Spacer(),
         _aboutButton(context),
+        const Spacer(),
         _statsButton(context),
-        _reportButton(context)
+        const Spacer(),
+        _reportButton(context),
+        const Spacer(),
       ],
     );
   }
@@ -82,8 +89,25 @@ class HomeScreen extends StatelessWidget {
         width: double.infinity,
         padding: const EdgeInsets.all(20.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [_mapButton(context), _btnRow(context)],
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            _mapButton(context),
+            _btnRow(context),
+            Container(
+              width: double.infinity,
+              height: iconsize,
+              color: Colors.green,
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Notícias',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+            )
+          ],
         ),
       ),
     );

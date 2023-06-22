@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class AboutScreen extends StatelessWidget {
   const AboutScreen({super.key});
   Widget _title() {
-    return const Text('Root Screen (Debug)');
+    return const Text('About Screen (Debug)');
   }
 
   @override

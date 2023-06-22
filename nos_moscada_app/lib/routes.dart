@@ -14,6 +14,6 @@ var appRoutes = {
   '/intro': (context) => const IntroScreen(),
   '/landing': (context) => const LandingScreen(),
   '/login': (context) => const LoginScreen(),
-  '/home/user': (context) => const UserScreen(),
+  '/home/user': (context) => UserScreen(),
   '/map': (context) => const MapScreen(),
 };
