@@ -5,7 +5,7 @@ Todos os arquivos do projetos podem ser encontrados em <a href="https://drive.go
 
 ## Descrição do Projeto
 O projeto tem como objetivo criar um aplicativo que possa de maneira fácil catalogar as árvores do campus. E eventualmente
-receber informes do usúarios sobre árvores que pareçam estar em estado crítico (risco de queda de galhos ou da árvore em si).
+receber informes de usúarios sobre árvores que pareçam estar em estado crítico (risco de queda de galhos ou da árvore em si).
 
 ## Requisitos
   Esses requisitos podem ser vistos de maneira simples no <a href="https://www.figma.com/file/atdB7MxcoXUE3kd6tyEfGQ/Untitled?type=design&node-id=0-1&t=ulWkTOnLy74vJeKD-0">Mockup Figma</a>.
