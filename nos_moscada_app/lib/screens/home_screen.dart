@@ -23,6 +23,15 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
+  Widget _mapButton(context) {
+    return ElevatedButton(
+      onPressed: () {
+        Navigator.pushNamed(context, '/map');
+      },
+      child: const Text('go to map'),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,10 +45,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            _userUid(),
-            _signOutButton(),
-          ],
+          children: <Widget>[_userUid(), _signOutButton(), _mapButton(context)],
         ),
       ),
     );
