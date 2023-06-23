@@ -65,6 +65,16 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
+  Widget _treeButton(context) {
+    return IconButton(
+      iconSize: iconsize,
+      icon: const Icon(Icons.eco_rounded),
+      onPressed: () {
+        Navigator.pushNamed(context, '/tree');
+      },
+    );
+  }
+
   Widget _btnRow(context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -75,6 +85,8 @@ class HomeScreen extends StatelessWidget {
         _statsButton(context),
         const Spacer(),
         _reportButton(context),
+        const Spacer(),
+        _treeButton(context),
         const Spacer(),
       ],
     );

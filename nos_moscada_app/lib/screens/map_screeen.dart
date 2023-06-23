@@ -11,9 +11,9 @@ class MapScreen extends StatefulWidget {
 
 class _MapScreenState extends State<MapScreen> {
   final Set<Marker> _markers = {
-    Marker(
+    const Marker(
         markerId: MarkerId("value"), position: LatLng(-21.999387, -47.891848)),
-    Marker(
+    const Marker(
         markerId: MarkerId("value"), position: LatLng(-22.012199, -47.901976)),
   };
 
