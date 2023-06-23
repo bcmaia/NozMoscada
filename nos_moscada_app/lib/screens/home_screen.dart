@@ -50,7 +50,7 @@ class HomeScreen extends StatelessWidget {
       iconSize: iconsize,
       icon: const Icon(Icons.query_stats),
       onPressed: () {
-        Navigator.pushNamed(context, 'stats');
+        Navigator.pushNamed(context, '/stats');
       },
     );
   }
@@ -60,7 +60,7 @@ class HomeScreen extends StatelessWidget {
       iconSize: iconsize,
       icon: const Icon(Icons.attach_file),
       onPressed: () {
-        Navigator.pushNamed(context, '/stats');
+        Navigator.pushNamed(context, '/report');
       },
     );
   }
@@ -80,6 +80,40 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
+  Widget _newsSection() {
+    return Container(
+      height: 150.0,
+      padding: EdgeInsets.all(20.0),
+      decoration: BoxDecoration(
+        color: Colors.green,
+        borderRadius: BorderRadius.circular(8.0),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            color: Colors.green,
+            child: Text(
+              'Últimas Notícias',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 18.0,
+                color: Colors.white,
+              ),
+            ),
+          ),
+          SizedBox(height: 10.0),
+          Text(
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla commodo velit non purus fringilla congue. Phasellus et lectus sed dui efficitur gravida. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec iaculis pharetra cursus.',
+            style: TextStyle(
+              fontSize: 16.0,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,20 +129,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             _mapButton(context),
             _btnRow(context),
-            Container(
-              width: double.infinity,
-              height: iconsize,
-              color: Colors.green,
-              child: const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Notícias',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  )
-                ],
-              ),
-            )
+            Expanded(child: _newsSection())
           ],
         ),
       ),
