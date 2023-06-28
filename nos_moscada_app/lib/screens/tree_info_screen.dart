@@ -1,12 +1,42 @@
 import 'package:flutter/material.dart';
+import 'dart:convert';
+import 'package:flutter/services.dart';
 
-class TreeInfo extends StatelessWidget {
-  const TreeInfo({super.key});
+// TODO: Replace this function with an API request to the database
+Future<Map<String, dynamic>> loadJsonData() async {
+    String jsonString = await rootBundle.loadString('test/tree-info.json');
+    Map<String, dynamic> data = jsonDecode(jsonString);
+    return data;
+}
+
+class TreeInfo extends StatefulWidget {
+    const TreeInfo({super.key});
+    @override
+    TreeInfoState createState() => TreeInfoState();
+}
+
+class TreeInfoState extends State<TreeInfo> {
+  String? imgUrl = '';
+  String? name;
+  String? description;
+
 
   static double iconsize = 50;
 
   Widget _title() {
     return const Text('Tree Info (Debug)');
+  }
+
+  @override
+  void initState() {
+      super.initState();
+      loadJsonData().then((data) => {
+                  setState(() {
+                              imgUrl = data['img_url'];
+                              name = data['name'];
+                              description = data['description'];
+                          })
+              });
   }
 
   @override
@@ -28,7 +58,7 @@ class TreeInfo extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Image.network(
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB4_zazLmJiReCYFvS-RrOk560-oE4rQI2HA&usqp=CAU",
+                    imgUrl ?? '',
                     fit: BoxFit.fitWidth,
                     width: 400,
                   ),
@@ -48,12 +78,12 @@ class TreeInfo extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(
+            SizedBox(
               width: double.infinity,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text("As Arveres Somos Nozes"),
+                  Text(name ?? 'Loading...'),
                 ],
               ),
             ),
@@ -70,12 +100,12 @@ class TreeInfo extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(
+            SizedBox(
               width: double.infinity,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text("As verdadeiras arvores são os amigos que fazemos no caminho."),
+                  Text(description ?? 'Loading...'),
                 ],
               ),
             ),
