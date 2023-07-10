@@ -56,7 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Sign In'),
+        title: const Text('Bem-vindo ao Sistema NozMoscada!'),
       ),
       body: responsiveBox(
         padding: 20.0,
@@ -65,26 +65,24 @@ class _LoginScreenState extends State<LoginScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             entryField('Email', _controllerEmail),
-            entryField('Password', _controllerPassword),
+            entryField('Senha', _controllerPassword),
             const SizedBox(height: 16.0),
             responsiveButton(
               onPressed: signInWithEmailAndPassword,
-              child: const Text('Sign In'),
+              child: const Text('Entrar'),
             ),
             displayError(errorMessage),
             line(),
-
             LoginButton(
               icon: FontAwesomeIcons.userNinja,
-              text: 'Continue as Guest',
+              text: 'Entrar como convidado',
               loginMethod: signInAnom,
               color: Colors.purple,
             ),
             const SizedBox(height: 16.0),
-
             LoginButton(
               icon: FontAwesomeIcons.google,
-              text: 'Login with google',
+              text: 'Entrar com o google',
               loginMethod: signInWithGoogle,
               color: Colors.blue,
             ),
