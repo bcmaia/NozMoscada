@@ -15,7 +15,7 @@ Future<void> main() async {
     // web
     await Firebase.initializeApp(
       options: const FirebaseOptions(
-        apiKey: 'AIzaSyD44r9m38Vga6EkmXGa2Z8ZY00t7JjzgFw', // Api key should not be hard-coded
+        apiKey: 'AIzaSyD44r9m38Vga6EkmXGa2Z8ZY00t7JjzgFw',
         appId: '1:693206006678:web:ab41c02862473f34747bb7',
         messagingSenderId: '693206006678',
         projectId: 'nozmoscada-222bd',

@@ -6,7 +6,6 @@ import './screens/landing_screen.dart';
 import './screens/login_screen.dart';
 import './screens/user_screen.dart';
 import './screens/map_screeen.dart';
-import './screens/tree_info_screen.dart';
 
 var appRoutes = {
   '/': (context) => const RootScreen(),
@@ -17,5 +16,4 @@ var appRoutes = {
   '/login': (context) => const LoginScreen(),
   '/home/user': (context) => UserScreen(),
   '/map': (context) => const MapScreen(),
-  '/tree': (context) => const TreeInfo(),
 };
