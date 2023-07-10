@@ -19,6 +19,7 @@ class Tree {
 }
 
 class _MapScreenState extends State<MapScreen> {
+  
   late GoogleMapController _mapController;
 
   final LatLngBounds _campusBounds = LatLngBounds(
