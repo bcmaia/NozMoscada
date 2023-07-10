@@ -12,18 +12,25 @@ class HomeScreen extends StatelessWidget {
 
   Widget _mapButton(context) {
     return MouseRegion(
-        cursor: SystemMouseCursors.click,
-        child: GestureDetector(
-          onTap: () {
-            Navigator.pushNamed(context, '/map');
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: () {
+          Navigator.pushNamed(context, '/map');
+        },
+        child: LayoutBuilder(
+          builder: (BuildContext context, BoxConstraints constraints) {
+            return Container(
+              width: constraints.maxWidth,
+              height: 300,
+              child: const Image(
+                image: AssetImage('assets/mymap.png'),
+                fit: BoxFit.fitWidth,
+              ),
+            );
           },
-          child: Image.network(
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB4_zazLmJiReCYFvS-RrOk560-oE4rQI2HA&usqp=CAU",
-            fit: BoxFit.fitWidth,
-            width: 110,
-            height: 300,
-          ),
-        ));
+        ),
+      ),
+    );
   }
 
   Widget _userButton(context) {
