@@ -6,20 +6,130 @@ import 'package:nos_moscada_app/services/auth.dart';
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
 
+  static double iconsize = 50;
+
   final User? user = Auth().currentUser;
 
-  Widget _title() {
-    return const Text('Root Screen (Debug)');
+  Widget _mapButton(context) {
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: () {
+          Navigator.pushNamed(context, '/map');
+        },
+        child: LayoutBuilder(
+          builder: (BuildContext context, BoxConstraints constraints) {
+            return Container(
+              width: constraints.maxWidth,
+              height: 300,
+              child: const Image(
+                image: AssetImage('assets/mymap.png'),
+                fit: BoxFit.fitWidth,
+              ),
+            );
+          },
+        ),
+      ),
+    );
   }
 
-  Widget _userUid() {
-    return Text(user?.email ?? 'User Email');
+  Widget _userButton(context) {
+    return IconButton(
+        iconSize: iconsize,
+        onPressed: () {
+          Navigator.pushNamed(context, '/home/user');
+        },
+        icon: const Icon(Icons.account_circle));
   }
 
-  Widget _signOutButton() {
-    return ElevatedButton(
-      onPressed: Auth().signOut,
-      child: const Text('Sign Out'),
+  Widget _aboutButton(context) {
+    return IconButton(
+      iconSize: iconsize,
+      icon: const Icon(Icons.info),
+      onPressed: () {
+        Navigator.pushNamed(context, '/home/about');
+      },
+    );
+  }
+
+  Widget _statsButton(context) {
+    return IconButton(
+      iconSize: iconsize,
+      icon: const Icon(Icons.query_stats),
+      onPressed: () {
+        Navigator.pushNamed(context, '/stats');
+      },
+    );
+  }
+
+  Widget _reportButton(context) {
+    return IconButton(
+      iconSize: iconsize,
+      icon: const Icon(Icons.attach_file),
+      onPressed: () {
+        Navigator.pushNamed(context, '/report');
+      },
+    );
+  }
+
+  Widget _treeButton(context) {
+    return IconButton(
+      iconSize: iconsize,
+      icon: const Icon(Icons.eco_rounded),
+      onPressed: () {
+        Navigator.pushNamed(context, '/tree');
+      },
+    );
+  }
+
+  Widget _btnRow(context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Spacer(),
+        _aboutButton(context),
+        const Spacer(),
+        _statsButton(context),
+        const Spacer(),
+        _reportButton(context),
+        const Spacer(),
+        _treeButton(context),
+        const Spacer(),
+      ],
+    );
+  }
+
+  Widget _newsSection() {
+    return Container(
+      height: 150.0,
+      padding: EdgeInsets.all(20.0),
+      decoration: BoxDecoration(
+        color: Colors.green,
+        borderRadius: BorderRadius.circular(8.0),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            color: Colors.green,
+            child: Text(
+              'Últimas Notícias',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 18.0,
+                color: Colors.white,
+              ),
+            ),
+          ),
+          SizedBox(height: 10.0),
+          Text(
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla commodo velit non purus fringilla congue. Phasellus et lectus sed dui efficitur gravida. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec iaculis pharetra cursus.',
+            style: TextStyle(
+              fontSize: 16.0,
+            ),
+          ),
+        ],
+      ),
     );
   }
 
@@ -27,18 +137,18 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: _title(),
+        title: _userButton(context),
       ),
       body: Container(
         height: double.infinity,
         width: double.infinity,
         padding: const EdgeInsets.all(20.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            _userUid(),
-            _signOutButton(),
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            _mapButton(context),
+            _btnRow(context),
+            Expanded(child: _newsSection())
           ],
         ),
       ),
