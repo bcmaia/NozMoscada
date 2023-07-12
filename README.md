@@ -38,7 +38,9 @@ receber informes de usúarios sobre árvores que pareçam estar em estado críti
    ### Aplicativo
   Devido ao foco portátil do aplicativo a implementação principal focará na plataforma android, assim, com Flutter como framework.
    ### Dados
-  Devido à alta necessidade de memória do aplicativo (mapa, fotos, descrições, dados de usuários) um banco de dados será necessário. Levando em conta o escopo do protótipo (aplicativo reduzido) foi escolhido o FireBase, por ser eficiente em bases de dados pequenas.  
+  Devido à alta necessidade de memória do aplicativo (mapa, fotos, descrições, dados de usuários) um banco de dados será necessário. Levando em conta o escopo do protótipo (aplicativo reduzido) foi escolhido o MongoDB, por ser eficiente em bases de dados pequenas.  
+  Banco de Dados: mongodb+srv://nozmoscada:<password>@cluseter0.228s0ab.mongodb.net/ -- Para acessar, solicite-nos a senha e a liberação do acesso em seu IP. 
+  
    ### Mapa
   Devido ao fato de o aplicativo funcionar em torno de relátorios, um mapa responsivo é de suma importância, assim, sua implementação será feita utilizando a Google Maps API (inicialmente PNG) que pode futuramente facilitar a implementação de GPS.
    
